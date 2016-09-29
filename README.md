@@ -36,7 +36,7 @@ Attribution
 
 Notes / Issues
 ---
-+ Game runs best on current versions of Chrome, Firefox and Safari.
++ Game runs best on current versions of Chrome, Firefox and Safari. It does not support Internet Explorer.
 + HTML5 audio is too laggy, so the game use the **[Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)**.
 + Audio does not load at times. Resolve this by toggling the power.
 
