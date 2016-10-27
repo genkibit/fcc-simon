@@ -1,13 +1,13 @@
 (function() {
   
-  "use strict";
+  'use strict';
 
   // For light pads and controls
-  var $padNodes = $(".pad");
-  var $lightNodes = $(".effect");
-  var $panelNodes = $(".panel");
-  var $count = $("#count");
-  var pattern = ["0", "1", "2", "3", "0", "1", "2", "3", "0", "1", "2", "3", "0", "1", "2", "3", "0", "1", "2", "3"];
+  var $padNodes = $('.pad');
+  var $lightNodes = $('.effect');
+  var $panelNodes = $('.panel');
+  var $count = $('#count');
+  var pattern = ['0', '1', '2', '3', '0', '1', '2', '3', '0', '1', '2', '3', '0', '1', '2', '3', '0', '1', '2', '3'];
   var index = 0;
   var turn = 1;
   var rate = 1000;
@@ -21,21 +21,21 @@
   var gameOver = true;
 
   // For sound effects
-  var sf = document.getElementById("sound-effects");
-  var blueUrl = "https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/blue";
-  var greenUrl = "https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/green";
-  var yellowUrl = "https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/yellow";
-  var redUrl = "https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/red";
-  var xUrl = "https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/wrong";
+  var sf = document.getElementById('sound-effects');
+  var blueUrl = 'https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/blue';
+  var greenUrl = 'https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/green';
+  var yellowUrl = 'https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/yellow';
+  var redUrl = 'https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/red';
+  var xUrl = 'https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/wrong';
   var sfObj = {};
   var audioCtx;
   var bufferLoader;
 
   // Lights up a panel
   function light_effect(padNum, dur) {
-    $lightNodes[padNum].classList.toggle("effect-01");
+    $lightNodes[padNum].classList.toggle('effect-01');
     window.setTimeout(function() {
-      $lightNodes[padNum].classList.toggle("effect-01");
+      $lightNodes[padNum].classList.toggle('effect-01');
     }, dur);
   }
 
@@ -44,66 +44,68 @@
     this.context = context;
     this.urlList = urlList;
     this.onload = callback;
-    // this.bufferList = new Array();
     this.bufferList = [];
     this.loadCount = 0;
   }
-  BufferLoader.prototype.loadBuffer = function(url, index) {
-    var loader = this;
+  BufferLoader.prototype = {
+    loadBuffer: function(url, index) {
+      var loader = this;
 
-    // Load buffer asynchronously
-    var request = new XMLHttpRequest();
-    request.open("GET", url, true);
-    request.responseType = "arraybuffer";
+      // Load buffer asynchronously
+      var request = new XMLHttpRequest();
+      request.open('GET', url, true);
+      request.responseType = 'arraybuffer';
 
-    request.onload = function() {
+      request.onload = function() {
 
-      // Asynchronously decode the audio file data in request.response
-      loader.context.decodeAudioData(
-        request.response,
-        function(buffer) {
-          if (!buffer) {
-            alert('error decoding file data: ' + url);
-            return;
+        // Asynchronously decode the audio file data in request.response
+        loader.context.decodeAudioData(
+          request.response,
+          function(buffer) {
+            if (!buffer) {
+              alert('error decoding file data: ' + url);
+              return;
+            }
+            loader.bufferList[index] = buffer;
+            if (++loader.loadCount == loader.urlList.length)
+              loader.onload(loader.bufferList);
+          },
+          function(error) {
+            console.error('decodeAudioData error', error);
           }
-          loader.bufferList[index] = buffer;
-          if (++loader.loadCount == loader.urlList.length)
-            loader.onload(loader.bufferList);
-        },
-        function(error) {
-          console.error('decodeAudioData error', error);
-        }
-      );
-    };
-    request.onerror = function() {
-      alert('BufferLoader: XHR error');
-    };
-    request.send();
-  };
-  BufferLoader.prototype.load = function() {
-    for (var i = 0; i < this.urlList.length; ++i)
-    this.loadBuffer(this.urlList[i], i);
+        );
+      };
+      request.onerror = function() {
+        alert('BufferLoader: XHR error');
+      };
+      request.send();
+    },
+    
+    load: function() {
+      for (var i = 0; i < this.urlList.length; ++i)
+      this.loadBuffer(this.urlList[i], i);
+    }
   };
 
   // Selects appropriate audio format
   function get_fmt_extension(sf) {
     var extension;
 
-    if (sf.canPlayType("audio/mp3") !== "") {
-      extension = ".mp3";
-    } else if (sf.canPlayType("audio/ogg") !== "") {
-      extension = ".ogg";
+    if (sf.canPlayType('audio/mp3') !== '') {
+      extension = '.mp3';
+    } else if (sf.canPlayType('audio/ogg') !== '') {
+      extension = '.ogg';
     }
     return extension;
   }
 
   // Callback for BufferLoader()
   function finishedLoading(bufferList) {
-    sfObj["0"] = bufferList[0];
-    sfObj["1"] = bufferList[3];
-    sfObj["2"] = bufferList[2];
-    sfObj["3"] = bufferList[1];
-    sfObj["x"] = bufferList[4];
+    sfObj['0'] = bufferList[0];
+    sfObj['1'] = bufferList[3];
+    sfObj['2'] = bufferList[2];
+    sfObj['3'] = bufferList[1];
+    sfObj['x'] = bufferList[4];
   }
 
   // Initializes Web Audio API
@@ -126,7 +128,7 @@
   // Plays the sound effect
   function play_sound(colorNum) {
     var gainNode = audioCtx.createGain();
-     var sound = audioCtx.createBufferSource();
+    var sound = audioCtx.createBufferSource();
 
     sound.buffer = sfObj[colorNum];
     sound.connect(gainNode);
@@ -176,7 +178,7 @@
     index = 0;
     btnOn = false;
     strictOn = strictOn || false;
-    $count.val("- -");
+    $count.val('- -');
   }
 
   // Starts the game
@@ -195,13 +197,13 @@
       init_audio();
       strictOn = false;
       gameOver = true;
-      $count.val("- -");
+      $count.val('- -');
     }
     else {
       window.clearTimeout(loop);
       iterate = false;
       gameOver = true;
-      $count.val("");
+      $count.val('');
     }
   }
 
@@ -214,7 +216,7 @@
       index++;
 
       if (turn === 20 && index === turn) {
-        $count.val("You Win!");
+        $count.val('You Win!');
         gameOver = true;
         btnOn = false;
       }
@@ -238,16 +240,16 @@
       }
     }
     else {
-      play_sound("x");
+      play_sound('x');
       light_effect(input, 2000);
       btnOn = false;
 
       if (strictOn === true) {
-        $count.val("!!");
+        $count.val('!!');
         gameOver = true;
       }
       else {
-        $count.val("Try Again");
+        $count.val('Try Again');
         index = 0;
         window.setTimeout(run_sequence, 2500);
       }
@@ -257,7 +259,7 @@
 
   // Event listeners for pads
   $padNodes.each(function() {
-    $(this).on("click", function() {
+    $(this).on('click', function() {
       if (btnOn === true && pwrOn === true) {
         compare($(this).val());
       }
@@ -266,25 +268,25 @@
 
   // Event listeners for control panel buttons
   $panelNodes.each(function() {
-    $(this).on("click", function() {
+    $(this).on('click', function() {
       var btnVal = $(this).val();
 
-      if (btnVal === "power") {
+      if (btnVal === 'power') {
         toggle_power();
       }
 
       if (pwrOn === true && gameOver === true) {
-        if (btnVal === "start") {
+        if (btnVal === 'start') {
           start();
         }
-        else if (btnVal === "mode") {
+        else if (btnVal === 'mode') {
           strictOn = !strictOn;
 
           if (strictOn) {
-            $count.val("strict");
+            $count.val('strict');
           }
           else {
-            $count.val("easy");
+            $count.val('easy');
           }
 
         }
@@ -296,9 +298,9 @@
   });
 
 
-   $count.val("");
+  $count.val('');
 
   // Quick and dirty way to avoid FOUC
-  $(document).ready($("body").animate({ opacity: 1 }, 1500));
+  $(document).ready($('body').animate({ opacity: 1 }, 1500));
 
 })();
