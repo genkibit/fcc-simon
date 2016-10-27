@@ -129,7 +129,7 @@
      var sound = audioCtx.createBufferSource();
 
     sound.buffer = sfObj[colorNum];
-     sound.connect(gainNode);
+    sound.connect(gainNode);
     gainNode.connect(audioCtx.destination);
     gainNode.gain.value = 0.05;
     sound.start(0);
@@ -150,8 +150,6 @@
 
   // Runs the current pad sequence each round
   function run_sequence() {
-    $display.text(pattern[index]);
-
     btnOn = false;
     iterate = true;
     $count.val(turn);
