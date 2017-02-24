@@ -43,5 +43,7 @@ Notes / Issues
 
 Changelog
 ---
-+  20160917 -- v1.0.0
++ 20160917 -- v1.0.0
   - Initial release.
++ 20170224 -- v2.0.
+  - Moved image and audio files to local directory.
