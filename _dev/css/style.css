@@ -17,7 +17,7 @@ body {
   font-family: "Trebuchet MS", sans-serif;
   overflow: hidden;
   background: #000;
-  background-image: url("https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/bg/wood_pattern.png");
+  background-image: url("../assets/bg/wood_pattern.png");
 }
 
 a {
@@ -85,7 +85,7 @@ h1, h2 {
   padding: 0;
   border: 0.25rem solid #000;
   box-shadow: inset 0 0 10px #000;
-  background-image: url("https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/bg/absurdity.png");
+  background-image: url("../assets/bg/absurdity.png");
 }
 
 #tl {
@@ -133,7 +133,7 @@ h1, h2 {
   margin: auto;
   text-align: center;
   background-color: #ccc;
-  background-image: url("https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/bg/church.png"), linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+  background-image: url("../assets/bg/church.png"), linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
   border: solid 0.5rem #000;
   border-radius: 50%;
   box-shadow:  0 0 10px #000;
