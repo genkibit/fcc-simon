@@ -22,11 +22,11 @@
 
   // For sound effects
   var sf = document.getElementById('sound-effects');
-  var blueUrl = 'https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/blue';
-  var greenUrl = 'https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/green';
-  var yellowUrl = 'https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/yellow';
-  var redUrl = 'https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/red';
-  var xUrl = 'https://dl.dropboxusercontent.com/u/3810405/freecodecamp/simon/sf/wrong';
+  var blueUrl = '../assets/sound/blue';
+  var greenUrl = '../assets/sound/green';
+  var yellowUrl = '../assets/sound/yellow';
+  var redUrl = '../assets/sound/red';
+  var xUrl = '../assets/sound/wrong';
   var sfObj = {};
   var audioCtx;
   var bufferLoader;
