@@ -22,11 +22,11 @@
 
   // For sound effects
   var sf = document.getElementById('sound-effects');
-  var blueUrl = '../assets/sound/blue';
-  var greenUrl = '../assets/sound/green';
-  var yellowUrl = '../assets/sound/yellow';
-  var redUrl = '../assets/sound/red';
-  var xUrl = '../assets/sound/wrong';
+  var blueUrl = 'assets/sound/blue';
+  var greenUrl = 'assets/sound/green';
+  var yellowUrl = 'assets/sound/yellow';
+  var redUrl = 'assets/sound/red';
+  var xUrl = 'assets/sound/wrong';
   var sfObj = {};
   var audioCtx;
   var bufferLoader;
