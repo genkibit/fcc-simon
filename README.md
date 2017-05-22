@@ -20,13 +20,13 @@ This is one of a series of projects for the front-end program of **[freeCodeCamp
 
 App Link
 ---
-Access the page **[here](http://genkibit.github.io/fcc-simon/)**.
+Access the page **[here](http://noelnoche.github.io/fcc-simon/)**.
 
 
 License
 ---
 + Simon is a trademark of Hasbro.
-+ Unless otherwise noted, game source files is available under an  **[MIT license](https://github.com/genkibit/fcc-simon/blob/gh-pages/LICENSE.md)**.
++ Unless otherwise noted, game source files is available under an  **[MIT license](https://github.com/noelnoche/fcc-simon/blob/gh-pages/LICENSE.md)**.
 
 
 Attribution
