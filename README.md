@@ -24,7 +24,7 @@ front-end program of **[freeCodeCamp](http://www.freecodecamp.com/)**. The proje
 
 App Link
 ---
-**<http://noelnoche.github.io/fcc-simon/>**
+**<https://noelnoche.github.io/fcc-simon/>**
 
 
 Usage
