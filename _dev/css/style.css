@@ -1,0 +1,318 @@
+html {
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  min-width: 384px;
+  min-width: 24rem;
+  margin: 0;
+  font-family: "Trebuchet MS", sans-serif;
+  overflow: hidden;
+  background: #000;
+  background-image: -webkit-linear-gradient(315deg, #E3FDF5 0%, #FFE6FA 100%);
+  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  background-image: url("../assets/graphics/bg_wood_pattern.png");
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #9cf;
+  text-decoration: underline;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background-color: #e5eaef;
+  text-shadow: none;
+}
+
+::selection {
+  background-color: #e5eaef;
+  text-shadow: none;
+}
+
+/*
+ *http://stackoverflow.com/questions/24222798/how-to-remove-the-blue-box-shadow-border-in-button-if-clicked
+ *http://stackoverflow.com/questions/7648898/how-to-get-rid-of-blue-outer-border-when-clicking-on-a-form-input-field
+ */
+button:focus,
+button:active,
+button:focus:active,
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+#wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+#main {
+  height: 384px;
+  height: 24rem;
+  width: 384px;
+  width: 24rem;
+  margin: auto;
+  background: #000;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  border-radius: 192px;
+  border-radius: 12rem;
+}
+
+.effect {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+
+.effect-01 {
+  top: 0;
+  height: 16px;
+  height: 1rem;
+  width: 16px;
+  width: 1rem;
+  color: #fff;
+  opacity: 0.65;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+  background-color: #fff;
+  border: solid 1px #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 60px 60px #fff;
+}
+
+.pad {
+  height: 192px;
+  height: 12rem;
+  width: 192px;
+  width: 12rem;
+  margin: 0;
+  padding: 0;
+  border: 4px solid #000;
+  border: 0.25rem solid #000;
+  box-shadow: inset 0 0 10px #000;
+  background-image: url("../assets/graphics/bg_absurdity.png");
+}
+
+#tl {
+  background-color: #6c6;
+  border-left: solid 12px #000;
+  border-left: solid 0.75rem #000;
+  border-top: solid 12px #000;
+  border-top: solid 0.75rem #000;
+  border-top-left-radius: 188px;
+  border-top-left-radius: 11.75rem;
+}
+
+#tr {
+  background-color: #f33;
+  border-right: solid 12px #000;
+  border-right: solid 0.75rem #000;
+  border-top: solid 12px #000;
+  border-top: solid 0.75rem #000;
+  border-top-right-radius: 188px;
+  border-top-right-radius: 11.75rem;
+}
+
+#bl {
+  background-clip: padding-box;
+  background-color: #ff3;
+  border-bottom-left-radius: 188px;
+  border-bottom-left-radius: 11.75rem;
+  border-bottom: solid 12px #000;
+  border-bottom: solid 0.75rem #000;
+  border-left: solid 12px #000;
+  border-left: solid 0.75rem #000;
+}
+
+#br {
+  background-clip: padding-box;
+  background-color: #09f;
+  border-bottom: solid 12px #000;
+  border-bottom: solid 0.75rem #000;
+  border-bottom-right-radius: 188px;
+  border-bottom-right-radius: 11.75rem;
+  border-right: solid 12px #000;
+  border-right: solid 0.75rem #000;
+}
+
+#center {
+  position: relative;
+  top: -276.8px;
+  top: -17.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  height: 168px;
+  height: 10.5rem;
+  width: 168px;
+  width: 10.5rem;
+  margin: auto;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #ccc;
+  background-image: url("../assets/graphics/bg_otis.png"), -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+  background-image: url("../assets/graphics/bg_otis.png"), linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+  border: solid 8px #000;
+  border: solid 0.5rem #000;
+  border-radius: 92px;
+  border-radius: 5.75rem;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.75);
+}
+
+#simon {
+  font-family: "Teko", "Trebuchet MS", sans-serif;
+  font-size: 40px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+#trademark {
+  top: 0;
+  font-size: 11.2px;
+  font-size: 0.7rem;
+  vertical-align: super;
+}
+
+.panel {
+  height: 16px;
+  height: 1rem;
+  width: 16px;
+  width: 1rem;
+  border: 2px solid #000;
+  border-radius: 8rem;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 2px #000;
+}
+
+#count {
+  height: 24px;
+  height: 1.5rem;
+  width: 72px;
+  width: 4.5rem;
+  margin: 0 auto;
+  padding-top: 3px;
+  padding-top: 0.23rem;
+  color: #f30;
+  font-family: "Teko", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.5px;
+  text-align: center;
+  background: #000;
+  border-radius: 16px;
+  border-radius: 1rem;
+  border-style: solid;
+  border-color: #ccc #999 #999 #ccc;
+}
+
+#start-mode {
+  margin: 8px auto 16px auto;
+  margin: 0.5rem auto 1rem auto;
+  font-size: 8px;
+  font-size: 0.5rem;
+}
+
+#start {
+  background-color: #f33;
+}
+
+#mode {
+  margin: 0 32px;
+  margin: 0 2rem;
+  background-color: #ff3;
+}
+
+#power {
+  background-color: #09f;
+}
+
+.btn-label {
+  display: inline-block;
+  width: 3rem;
+  text-transform: uppercase;
+}
+
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 12.8px;
+  font-size: 0.8rem;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+footer > p:first-child {
+  margin-right: 16px;
+  margin-right: 1rem;	
+}
+
+
+@media screen and (min-width: 400px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 21px;
+  }
+}
+
+@media screen and (min-width: 1650px) {
+  html {
+    font-size: 30px;
+  }  
+}

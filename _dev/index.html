@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="author" content="Noel Noche">
+    <meta name="description" content="Play a variant of the classic Simon game online.">
+    
+    <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+    <link rel="shortcut icon" href="https://lh3.googleusercontent.com/LgFbmGHjiarLHMRUDk017Q_u3KhJOcmGbLj12Nsz6nBjhYsgedXkF1tFweUw7HX8VuOLa8Xr4Ry8vfcU5qGwg9wx4UYhjQbkiAmwP-2j2EASiDvhZfehNbI2NqkzYtS48VxfUF15XA=s300-no">
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.0/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <title>Simon Online | Noel Noche &#8212; hellonoel.com</title>
+  </head>
+
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <noscript>Sorry, you need JavaScript enabled to run this application.</noscript>
+    <div id="wrapper">
+      <header class="sr-only">
+        <h1>Free Code Camp Project</h1>
+        <h2>Online Simon Game</h2>
+      </header>
+
+      <div id="main">
+        <div class="row top">
+          <button class="btn pad" id="tl" value="0" type="button"><span class="effect">00</span></button><button class="btn pad" id="tr" value="1" type="button"><span class="effect">01</span></button>
+        </div>
+        <div class="row bottom">
+          <button class="btn pad" id="bl" value="2" type="button"><span class="effect">02</span></button><button class="btn pad" id="br" value="3" type="button"><span class="effect">03</span></button><br>
+        </div>
+        <div id="center">
+          <h2 id="simon">simon<span id="trademark">&#8482;</span></h2>
+          <div id="start-mode">
+            <button class="btn panel" id="start" value="start" type="button"><span class="sr-only">START</span></button><button class="btn panel" id="mode" value="mode" type="button"><span class="sr-only">MODE</span></button><button class="btn panel" id="power" value="power" type="button"><span class="sr-only">ON/OFF</span></button>
+            <div class="btn-labels"><span class="btn-label">start</span><span class="btn-label">mode</span><span class="btn-label">on/off</span></div>
+          </div>
+          <input id="count" type="text" size="2" readonly>
+        </div>
+      </div>
+
+      <footer>
+        <p><a href="https://github.com/noelnoche/fcc-simon" target="_blank">GitHub</a></p>
+        <p><a href="https://github.com/noelnoche/fcc-simon/issues" target="_blank">Report an issue</a></p>
+      </footer>
+    </div>
+
+    <audio id="sound-effects">
+      <source src="assets/sound/blue.mp3" type="audio/mp3">
+      <source src="assets/sound/blue.ogg" type="audio/ogg">
+      <source src="assets/sound/green.mp3" type="audio/mp3">
+      <source src="assets/sound/green.ogg" type="audio/ogg">
+      <source src="assets/sound/yellow.mp3" type="audio/mp3">
+      <source src="assets/sound/yellow.ogg" type="audio/ogg">
+      <source src="assets/sound/red.mp3" type="audio/mp3">
+      <source src="assets/sound/red.ogg" type="audio/ogg">
+      <source src="assets/sound/wrong.mp3" type="audio/mp3">
+      <source src="assets/sound/wrong.ogg" type="audio/ogg">
+    </audio>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.1.0.min.js">\x3C/script>');</script>
+    <script src="js/simon.js"></script>
+  </body>
+</html>
